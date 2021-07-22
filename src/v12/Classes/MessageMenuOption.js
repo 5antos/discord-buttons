@@ -10,6 +10,8 @@ class MessageMenuOption {
 
     this.value = 'value' in data && data.value ? resolveString(data.value) : undefined;
 
+    this.default = 'default' in data && typeof data.default === 'boolean' ? data.default : false;
+
     if (data.emoji) this.setEmoji(data.emoji);
 
     this.description = 'description' in data ? data.description : undefined;
@@ -32,8 +34,8 @@ class MessageMenuOption {
     return this;
   }
 
-  setDefault(def = true) {
-    this.default = def;
+  setDefault(def = false){
+    this.default = typeof def === 'boolean' ? def : false;
     return this;
   }
 
