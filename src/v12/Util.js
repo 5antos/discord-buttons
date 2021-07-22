@@ -64,6 +64,8 @@ module.exports = {
     let maxValues = this.resolveMaxValues(data.max_values);
     let minValues = this.resolveMinValues(data.min_values);
 
+    let disabled = typeof data.disabled === 'boolean' ? data.disabled : false;
+
     return {
       type: MessageComponentTypes.SELECT_MENU,
       placeholder: data.placeholder,
@@ -71,6 +73,7 @@ module.exports = {
       options: options,
       max_values: maxValues,
       min_values: minValues,
+      disabled: disabled
     };
   },
   resolveMenuOptions(data) {
@@ -87,6 +90,7 @@ module.exports = {
         value: d.value,
         emoji: d.emoji,
         description: d.description,
+        default: d.default
       });
     });
 
