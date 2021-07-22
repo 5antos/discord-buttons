@@ -68,11 +68,11 @@ module.exports = {
 
     return {
       type: MessageComponentTypes.SELECT_MENU,
-      placeholder: data.placeholder,
       custom_id: data.custom_id,
       options: options,
-      max_values: maxValues,
+      placeholder: data.placeholder,
       min_values: minValues,
+      max_values: maxValues,
       disabled: disabled
     };
   },
@@ -88,8 +88,8 @@ module.exports = {
       options.push({
         label: d.label,
         value: d.value,
-        emoji: d.emoji,
         description: d.description,
+        emoji: d.emoji,
         default: d.default
       });
     });
