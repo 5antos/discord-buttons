@@ -16,6 +16,8 @@ class MessageMenu extends BaseMessageComponent {
 
     this.min_values = ('minValues' in data) | ('min_values' in data) ? resolveMinValues(data.minValues, data.min_values) : undefined;
 
+    this.disabled = (('disabled' in data) && (typeof data.disabled === 'boolean')) ? data.disabled : false;
+
     this.options = [];
     if ('option' in data) {
       data.option.type = 'SELECT_MENU_OPTION';
@@ -70,6 +72,11 @@ class MessageMenu extends BaseMessageComponent {
     return this;
   }
 
+  setDisabled(disable = true) {
+    this.disabled = typeof disable === 'boolean' ? disable : false;
+    return this;
+  }
+  
   toJSON() {
     return {
       type: MessageComponentTypes.SELECT_MENU,
@@ -78,6 +85,7 @@ class MessageMenu extends BaseMessageComponent {
       max_values: this.max_values,
       min_values: this.min_values,
       options: this.options,
+      disabled: this.disabled
     };
   }
 }
