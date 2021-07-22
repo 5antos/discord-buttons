@@ -62,9 +62,9 @@ class MessageMenuOption {
     return {
       label: this.label,
       value: this.value,
-      default: this.default,
       emoji: this.emoji,
       description: this.description,
+      default: this.default
     };
   }
 }
