@@ -237,6 +237,7 @@ export class MessageMenu extends BaseMessageComponent {
   public addOption(option: MessageMenuOption): MessageMenu;
   public addOptions(...options: MessageMenuOption[]): MessageMenu;
   public removeOptions(index: number, deleteCount: number, ...options: MessageMenuOption[]): MessageMenu;
+  public setDisabled(disable?: boolean): MessageMenu;
   public toJSON(): MessageMenuData;
 }
 
