@@ -130,6 +130,7 @@ export interface MessageMenuData {
   max_values?: number;
   min_values?: number;
   options?: Array<MessageMenuOptions>;
+  disabled?: boolean;
 }
 
 export interface MessageMenuOptionsData {
@@ -137,6 +138,7 @@ export interface MessageMenuOptionsData {
   emoji?: string | GuildButtonEmoji;
   description?: string;
   value?: string;
+  default?: boolean;
 }
 
 export class InteractionReply {
